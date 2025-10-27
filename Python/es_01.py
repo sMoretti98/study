@@ -1,14 +1,11 @@
-from openai import OpenAI
+MIN_SALARY = int(50000)
+MIN_YEARS = int(2)
+salary = int(input("Inserisci il tuo salario: "))
+years_on_job = int(input("Inserisci i tuoi anni di lavoro: "))
 
-client = OpenAI()
-
-user_prompt = input("Enter a prompt: ")
-system_prompt = "You are a helpful assistant."
-
-response = client.chat.completions.create(
-    input=user_prompt,
-    instructions=system_prompt,
-    model="gpt-5"
-)
-
-print(response.output_text)
+if salary >= MIN_SALARY and years_on_job >= MIN_YEARS:
+        print("Il cliente può ricevere il prestito")
+elif salary >= MIN_SALARY+:
+    print(f"Il cliente deve essere stato impiegato per almeno {MIN_YEARS} anni per ricevere il prestito")
+else:
+    print(f"Il cliente deve guadagnare almeno € {MIN_SALARY:,.2f} annui per ricevere il prestito")
